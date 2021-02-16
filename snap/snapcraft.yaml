@@ -13,13 +13,35 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 
 parts:
   sx1301-hal:
-    # See 'snapcraft plugins'
-    source: https://github.com/helium/miner.git
+    # The HAL / Drivers for the Radio Module with a 1301 chipset
+    source: https://github.com/NebraLtd/lora_gateway.git
     build-packages:
       - autoconf
       - automake
       - libtool
       - build-essential
       - wget
+    plugin: make
 
+  sx1301-pktfwd:
+    # The packet forwarder software for radio modules with a 1301 chipset
+    source: https://github.com/NebraLtd/packet_forwarder.git
+    build-packages:
+      - autoconf
+      - automake
+      - libtool
+      - build-essential
+      - wget
+    plugin: make
+    after: ["sx1301-hal"]
+
+  sx1301-pktfwd:
+    # The combined HAL & PKTfwder for the 1302 chipset.
+    source: https://github.com/NebraLtd/sx1302_hal_prod.git
+    build-packages:
+      - autoconf
+      - automake
+      - libtool
+      - build-essential
+      - wget
     plugin: make
