@@ -24,7 +24,6 @@ parts:
       - build-essential
       - wget
     plugin: make
-    after: ["sx1301-hal"]
     override-build: |
       cd lora_gateway
       make
