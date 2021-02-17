@@ -38,6 +38,9 @@ parts:
       - wget
     plugin: make
     after: ["sx1301-hal"]
+    override-build: |
+      make
+      cp . $SNAPCRAFT_PART_INSTALL
 
   sx1301-pktfwd:
     # The combined HAL & PKTfwder for the 1302 chipset.
