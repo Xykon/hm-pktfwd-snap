@@ -30,7 +30,7 @@ parts:
       cd ..
       cd packet_forwarder
       make
-      cp . $SNAPCRAFT_PART_INSTALL
+      cp -r . $SNAPCRAFT_PART_INSTALL
 
   sx1302-hal:
     # The combined HAL & PKTfwder for the 1302 chipset.
@@ -44,4 +44,4 @@ parts:
     plugin: make
     override-build: |
       make
-      cp . $SNAPCRAFT_PART_INSTALL
+      cp -r . $SNAPCRAFT_PART_INSTALL
