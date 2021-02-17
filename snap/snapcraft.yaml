@@ -42,7 +42,7 @@ parts:
       make
       cp . $SNAPCRAFT_PART_INSTALL
 
-  sx1301-pktfwd:
+  sx1302-hal:
     # The combined HAL & PKTfwder for the 1302 chipset.
     source: https://github.com/NebraLtd/sx1302_hal_prod.git
     build-packages:
@@ -52,3 +52,6 @@ parts:
       - build-essential
       - wget
     plugin: make
+    override-build: |
+      make
+      cp . $SNAPCRAFT_PART_INSTALL
