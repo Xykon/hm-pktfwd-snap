@@ -25,7 +25,7 @@ parts:
       - wget
     plugin: make
     override-build:
-      - "make"
+      - make
 
   sx1301-pktfwd:
     # The packet forwarder software for radio modules with a 1301 chipset
