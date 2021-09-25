@@ -16,7 +16,7 @@ architectures:
 parts:
   sx1301-merged:
     # The packet forwarder software for radio modules with a 1301 chipset
-    source: https://github.com/NebraLtd/sx1301-merged.git
+    source: https://github.com/Xykon/sx1301-merged.git
     build-packages:
       - autoconf
       - automake
@@ -29,19 +29,5 @@ parts:
       make
       cd ..
       cd packet_forwarder
-      make
-      cp -r . $SNAPCRAFT_PART_INSTALL
-
-  sx1302-hal:
-    # The combined HAL & PKTfwder for the 1302 chipset.
-    source: https://github.com/NebraLtd/sx1302_hal_prod.git
-    build-packages:
-      - autoconf
-      - automake
-      - libtool
-      - build-essential
-      - wget
-    plugin: make
-    override-build: |
       make
       cp -r . $SNAPCRAFT_PART_INSTALL
